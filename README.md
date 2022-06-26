@@ -63,7 +63,7 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="#">
+      <a href="https://github.com/thiagofqs">
         <img src="https://avatars.githubusercontent.com/u/39809188?v=4" width="100px;" alt="Foto do Thiago Freitas no GitHub"/><br>
         <sub>
           <b>Thiago Freitas</b>
@@ -71,7 +71,7 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#">
+      <a href="https://github.com/Kaic-2004">
         <img src="https://avatars.githubusercontent.com/u/100730175?v=4" width="100px;" alt="Foto do Kaic Gonçalves no Github"/><br>
         <sub>
           <b>Kaic Gonçalves</b>
@@ -80,7 +80,7 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://colorir.me/wp-content/uploads/2021/07/Letra-M-1.jpg" width="100px;" alt="Foto do Matheus Armindo no Github"/><br>
+        <img src="https://colorir.me/wp-content/uploads/2021/07/Letra-M-1.jpg" width="100px;" alt="Foto do Matheus Armindo no Github (provisória)"/><br>
         <sub>
           <b>Matheus Armindo</b>
         </sub>
@@ -93,4 +93,4 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
 
-[⬆ Voltar ao topo](#api_financeira)<br>
+[⬆ Voltar ao topo](#api_instrutor)<br>
