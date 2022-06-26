@@ -1,9 +1,4 @@
 # API Instrutor
-
-![GitHub repo size](https://img.shields.io/github/repo-size/thiagofqs/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/thiagofqs/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/thiagofqs/README-template?style=for-the-badge)
-
  API desenvolvida como trabalho, no curso Técnico em Desenvolvimento de Sistemas, usando NodeJS e o Express, juntamente com o Insomnia.
 
 > Uma API para cadastro, verificação e deleção de instrutores e classes, tudo com verificações, atribuições e formatações.
@@ -49,17 +44,17 @@ O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em
 
 Antes de começar para usar o projeto, verifique se você atendeu aos seguintes requisitos:
 * Você instalou a versão mais recente de `NodeJS / Express / Insomnia`.
-* Você tem uma máquina `Windows`.
-* Você leu `README.md`.
+* Você tem uma máquina `Windows / Linux`.
+* Você leu todo o `README.md`.
 
-Para usar a API Financeira, siga estas etapas para a inicialização do projeto:
+Para usar a API Financeira, caso não queira dar um `clone`, siga essas etapas para a inicialização do projeto:
 
 ```
 yarn init -y || npm init -y
 yarn add express || npm install express
 ```
 
-Após tais comandos de execução, insira o a pasta `src` e seu conteúdo. Em seguida abra o Insomnia e crie as rotas respectivas presentes no código, para testar a API.
+Após tais comandos de execução, insira a pasta `src` e seu conteúdo. Em seguida abra o Insomnia e crie as rotas respectivas presentes no código, para testar a API.
 
 ## 🤝 Colaboradores
 
