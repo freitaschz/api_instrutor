@@ -89,6 +89,19 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
   </tr>
 </table>
 
+## Professor
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/patrickviniciusestevao">
+        <img src="https://avatars.githubusercontent.com/u/60794165?v=4" width="100px;" alt="Foto do Patrick Vinícius Estevão no GitHub"/><br>
+        <sub>
+          <b>Patrick Vinícius Estevão</b>
+        </sub>
+      </a>
+    </td>
+</table>
+
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
