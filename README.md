@@ -89,7 +89,7 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
   </tr>
 </table>
 
-## Professor
+### Professor
 <table>
   <tr>
     <td align="center">
