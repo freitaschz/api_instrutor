@@ -1,4 +1,9 @@
 # API Instrutor
+
+![GitHub repo size](https://img.shields.io/github/repo-size/thiagofqs/README-template?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/thiagofqs/README-template?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/thiagofqs/README-template?style=for-the-badge)
+
  API desenvolvida como trabalho, no curso Técnico em Desenvolvimento de Sistemas, usando NodeJS e o Express, juntamente com o Insomnia.
 
 > Uma API para cadastro, verificação e deleção de instrutores e classes, tudo com verificações, atribuições e formatações.
@@ -33,10 +38,10 @@
 
 ### Ajustes e melhorias
 
-O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em desenvolvimento com atualizações, como objetivo de melhorar a API e obter mais conhecimento nos estudos em cima dela. As próximas atualizações serão voltadas nas seguintes tarefas:
+O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em desenvolvimento com atualizações como objetivo de melhorar a API e obter mais conhecimento nos estudos em cima dela. As próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Validação de CPF
-- [x] Formatação de CPF
+- [x] Formatação de CPF 
 - [x] Formatação de número de celular
 - [ ] Criptografia de senha de login usando bcrypt
 
@@ -54,7 +59,7 @@ yarn init -y || npm init -y
 yarn add express || npm install express
 ```
 
-Após tais comandos de execução, insira o conteúdo da pasta `src`. Em seguida abra o Insomnia e crie as rotas respectivas presentes no código para testar a API.
+Após tais comandos de execução, insira o a pasta `src` e seu conteúdo. Em seguida abra o Insomnia e crie as rotas respectivas presentes no código, para testar a API.
 
 ## 🤝 Colaboradores
 
@@ -79,8 +84,8 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#">
-        <img src="https://colorir.me/wp-content/uploads/2021/07/Letra-M-1.jpg" width="100px;" alt="Foto do Matheus Armindo no Github (provisória)"/><br>
+      <a href="https://github.com/Maethsu">
+        <img src="https://avatars.githubusercontent.com/u/108204887?v=4" width="100px;" alt="Foto do Matheus Armindo no Github (provisória)"/><br>
         <sub>
           <b>Matheus Armindo</b>
         </sub>
