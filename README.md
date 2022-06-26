@@ -33,7 +33,7 @@
 
 ### Ajustes e melhorias
 
-O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em desenvolvimento com atualizações, como objetivo de melhorar API e obter mais conhecimento nos estudos em cima dela. As próximas atualizações serão voltadas nas seguintes tarefas:
+O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em desenvolvimento com atualizações, como objetivo de melhorar a API e obter mais conhecimento nos estudos em cima dela. As próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Validação de CPF
 - [x] Formatação de CPF
