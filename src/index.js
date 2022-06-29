@@ -310,16 +310,19 @@ app.patch("/employee", verifyIfEmployeeExists, verifyLogin, (req, res) => {
 
 app.delete("/employee", verifyIfEmployeeExists, (req, res) => {
     const {employee} = req;
+    let exists;
     if(employee.class != "") {
         for (const valueClass of classes) {
+            exists = false;
             for (const valueEmployee of valueClass.employee) {
-                if(valueEmployee === employee.employeeRegistration) {
+                if(valueEmployee === employee.employeeRegistration && exists === false) {
+                    const index = (valueClass.employee).indexOf(employee.employeeRegistration);
+                    (valueClass.employee).splice(index, 1);
+                    exists = true;
+                } else if(exists === true) {
                     break;
                 };
             };
-            const index = (valueClass.employee).indexOf(employee.employeeRegistration);
-            (valueClass.employee).splice(index, 1);
-            break;
         };
     };
     const index = employees.indexOf(employee);
