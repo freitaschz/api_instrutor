@@ -1,7 +1,7 @@
 # API Instrutor
- API desenvolvida como trabalho, no curso Técnico em Desenvolvimento de Sistemas, usando NodeJS e o Express, juntamente com o Insomnia.
+ API desenvolvida como trabalho, no curso Técnico em Desenvolvimento de Sistemas, usando NodeJS e o Express, com as requisições e respostas feitas através do Insomnia.
 
-> Uma API para cadastro, verificação e deleção de instrutores e classes, tudo com verificações, atribuições e formatações.
+> Uma API para cadastro de instrutores e classes, verificação e deleção dos mesmos, ambos com verificações, atribuições e formatações.
 
 ### Requisitos
 
@@ -33,7 +33,7 @@
 
 ### Ajustes e melhorias
 
-O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em desenvolvimento com atualizações como objetivo de melhorar a API e obter mais conhecimento nos estudos em cima dela. As próximas atualizações serão voltadas nas seguintes tarefas:
+O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em desenvolvimento com futuras atualizações, como objetivo de melhorar a API e obter mais conhecimento nos estudos em cima dela. As próximas atualizações serão voltadas para as seguintes tarefas:
 
 - [x] Validação de CPF
 - [x] Formatação de CPF 
@@ -44,17 +44,18 @@ O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em
 
 Antes de começar para usar o projeto, verifique se você atendeu aos seguintes requisitos:
 * Você instalou a versão mais recente de `NodeJS / Express / Insomnia`.
+* Você atualizou o `npm` ou o `yarn`.
 * Você tem uma máquina `Windows / Linux`.
 * Você leu todo o `README.md`.
 
-Para usar a API Financeira, caso não queira dar um `clone`, siga essas etapas para a inicialização do projeto:
+Para usar a API Financeira, sem dar `clone` e `pull`, siga essas etapas para a inicialização manual do projeto e instalação dos pacote Express:
 
 ```
-yarn init -y || npm init -y
-yarn add express || npm install express
+npm init -y || yarn init -y
+npm install express || yarn add express
 ```
 
-Após tais comandos de execução, insira a pasta `src` e seu conteúdo. Em seguida abra o Insomnia e crie as rotas respectivas presentes no código, para testar a API.
+Após tais comandos de execução, crie a pasta `src` e insira o código JavaScript `index.js`. Em seguida abra o Insomnia e crie as rotas respectivas presentes no código, para testar a API.
 
 ## 🤝 Colaboradores
 
