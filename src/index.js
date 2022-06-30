@@ -94,19 +94,29 @@ function nameFormated(name) {
 
 function verifyClassLinkedEmployee(req, res, next) {
     const {classId} = req;
-    if(classId.employee == "") {
-        return next();
-    } else {
-        return res.status(400).json({
-            error: "Class linked at employee!"
-        });
+    for (const valueEmployee of employees) {
+        for(const valueClass of valueEmployee.class) {
+            if(valueClass === classId.id) {
+                return res.status(400).json({
+                    error: "Class linked at employee!"
+                });
+            };
+        };   
     };
+    return next();
 };
 
 function verifyLogin(req, res, next) {
-    const {employee} = req;
-    const {cpf, senha} = req.headers;
-    if(employee.cpf === cpfFormated(cpf) && employee.senha === senha) {
+    const {cpf, password} = req.headers;
+    const searchByCPF = employees.find((searchByCPF) => 
+        searchByCPF.cpf === cpfFormated(cpf)
+    );
+    if(!searchByCPF) {
+        return res.status(400).json({
+            error: "Employee not found!"
+        });
+    };
+    if(searchByCPF.cpf === cpfFormated(cpf) && searchByCPF.password === password) {
         return next();
     } else {
         return res.status(400).json({
@@ -118,13 +128,12 @@ function verifyLogin(req, res, next) {
 function verifyCPF(req, res, next) {
     const {cpf} = req.body;
     let add, rev;
-    //cpf = cpf.replace(/[^\d]+/g,'');
 	if(cpf == '') {
         return res.json({
             error: "Invalid CPF!"
         })
     }
-	// Elimina CPFs inválidos conhecidos	
+	// Elimina CPFs inválidos conhecidos
 	if (cpf.length != 11 || 
 		cpf == "00000000000" || 
 		cpf == "11111111111" || 
@@ -141,28 +150,28 @@ function verifyCPF(req, res, next) {
             })
     }
     add = 0;
-	for (i=0; i < 9; i ++)		
-		add += parseInt(cpf.charAt(i)) * (10 - i);	
-		rev = 11 - (add % 11);	
-		if (rev == 10 || rev == 11)		
-			rev = 0;	
-		if (rev != parseInt(cpf.charAt(9)))		
+	for (i=0; i < 9; i ++)
+		add += parseInt(cpf.charAt(i)) * (10 - i);
+		rev = 11 - (add % 11);
+		if (rev == 10 || rev == 11)
+			rev = 0;
+		if (rev != parseInt(cpf.charAt(9)))
         return res.json({
             error: "Invalid CPF!"
         })
-	// Valida 2º digito	
+	// Valida 2º dígito	
 	add = 0;	
-	for (i = 0; i < 10; i ++)		
-		add += parseInt(cpf.charAt(i)) * (11 - i);	
-	rev = 11 - (add % 11);	
-	if (rev == 10 || rev == 11)	
-		rev = 0;	
+	for (i = 0; i < 10; i ++)
+		add += parseInt(cpf.charAt(i)) * (11 - i);
+	rev = 11 - (add % 11);
+	if (rev == 10 || rev == 11)
+		rev = 0;
 	if (rev != parseInt(cpf.charAt(10))) {
-    return res.json({
-        error: "Invalid CPF!"
-    })
+        return res.json({
+            error: "Invalid CPF!"
+        })
     }
-	return next();   
+	return next();
 };
 
 function cpfFormated(cpf) {
@@ -175,22 +184,22 @@ function cellFormated(number) {
 
 function monthFormated(value) {
     if(value<10) {
-        return "0"+value;
+        return `0${value}`;
     } else {
         return value;
     };
 };
 
-function dateFormated(day, month, year) {
-    return day+"/"+month+"/"+year;
-};
-
-app.post("/register/employee", verifyIfEmployeeAlreadyExists, verifyCPF, (req, res) => {
-    const {name, employeeRegistration, password, cpf, email, birthDate, cellPhone} = req.body;
+function dateFormated() {
     const newDate = new Date();
     const year = newDate.getFullYear();
     const month = monthFormated(newDate.getMonth()+1);
     const day = newDate.getDate();
+    return `${day}/${month}/${year}`;
+};
+
+app.post("/register/employee", verifyIfEmployeeAlreadyExists, verifyCPF, (req, res) => {
+    const {name, employeeRegistration, password, cpf, email, birthDate, cellPhone} = req.body;
     employees.push({
         name: nameFormated(name),
         employeeRegistration,
@@ -199,7 +208,7 @@ app.post("/register/employee", verifyIfEmployeeAlreadyExists, verifyCPF, (req, r
         email,
         birthDate,
         cellPhone: cellFormated(cellPhone),
-        createdAt: dateFormated(day, month, year),
+        createdAt: dateFormated(),
         class: []
     });
     return res.status(201).send();
@@ -207,24 +216,18 @@ app.post("/register/employee", verifyIfEmployeeAlreadyExists, verifyCPF, (req, r
 
 app.post("/register/class", verifyIfClassAlreadyExists, (req, res) => {
     const {name, id} = req.body;
-    const newDate = new Date();
-    const year = newDate.getFullYear();
-    const month = monthFormated(newDate.getMonth()+1);
-    const day = newDate.getDate();
     classes.push({
         name,
         id,
-        createdAt: dateFormated(day, month, year),
-        employee: []
+        createdAt: dateFormated()
     });
     return res.status(201).send();
 });
 
-app.put("/register/employee/class", verifyIfEmployeeExists, verifyIfClassExists, verifyIfClassAlreadyLinkedEmployee, (req, res) => {
-    const {employee, classId} = req;
+app.patch("/register/employee/class", verifyIfEmployeeExists, verifyIfClassExists, verifyIfClassAlreadyLinkedEmployee, (req, res) => {
+    const {employee} = req;
     const {id} = req.body;
     employee.class.push(id);
-    classId.employee.push(employee.employeeRegistration);
     return res.status(201).send();
 });
 
@@ -277,34 +280,27 @@ app.get("/search/class", verifyIfClassExists, (req, res) => {
     return res.status(201).send(classId);
 });
 
-app.patch("/employee", verifyIfEmployeeExists, verifyLogin, (req, res) => {
+app.put("/employee", verifyLogin, (req, res) => {
     const {name, password, email, birthDate, cellPhone} = req.body;
-    const {employee} = req;
-    employee.name = name;
-    employee.password = password;
-    employee.email = email;
-    employee.birthDate = birthDate;
-    employee.cellPhone = cellFormated(cellPhone);
+    const {cpf} = req.headers;
+    const searchByCPF = employees.find((searchByCPF) => 
+        searchByCPF.cpf === cpfFormated(cpf)
+    );
+    if(!searchByCPF) {
+        return res.status(400).json({
+            error: "Employee not found!"
+        });
+    };
+    searchByCPF.name = nameFormated(name);
+    searchByCPF.password = password;
+    searchByCPF.email = email;
+    searchByCPF.birthDate = birthDate;
+    searchByCPF.cellPhone = cellFormated(cellPhone);
     return res.status(201).send();
 });
 
 app.delete("/employee", verifyIfEmployeeExists, (req, res) => {
     const {employee} = req;
-    let exists;
-    if(employee.class != "") {
-        for (const valueClass of classes) {
-            exists = false;
-            for (const valueEmployee of valueClass.employee) {
-                if(valueEmployee === employee.employeeRegistration && exists === false) {
-                    const index = (valueClass.employee).indexOf(employee.employeeRegistration);
-                    (valueClass.employee).splice(index, 1);
-                    exists = true;
-                } else if(exists === true) {
-                    break;
-                };
-            };
-        };
-    };
     const index = employees.indexOf(employee);
     employees.splice(index, 1);
     return res.status(200).json(employees);
