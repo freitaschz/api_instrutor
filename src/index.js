@@ -14,7 +14,6 @@ app.use(express.json());
  * createdAt - string
  */
 const employees = [];
-// const employeesSecret = [];
 
 /**
  * name - string
@@ -24,7 +23,7 @@ const employees = [];
 const classes = [];
 
 function verifyIfEmployeeAlreadyExists(req, res, next) {
-    const { employeeRegistration } = req.body;
+    const {employeeRegistration} = req.body;
     const employeeAlreadyExists = employees.some((employee) => 
         employee.employeeRegistration === employeeRegistration
     );
@@ -34,10 +33,10 @@ function verifyIfEmployeeAlreadyExists(req, res, next) {
         });
     };
     return next();
-}
+};
 
 function verifyIfEmployeeExists(req, res, next) {
-    const { employeeRegistration } = req.body;
+    const {employeeRegistration} = req.body;
     const employee = employees.find((employee) => 
         employee.employeeRegistration === employeeRegistration
     );
@@ -51,7 +50,7 @@ function verifyIfEmployeeExists(req, res, next) {
 };
 
 function verifyIfClassAlreadyExists(req, res, next) {
-    const { id } = req.body;
+    const {id} = req.body;
     const classAlreadyExists = classes.some((classId) => 
         classId.id === id
     );
@@ -64,7 +63,7 @@ function verifyIfClassAlreadyExists(req, res, next) {
 };
 
 function verifyIfClassExists(req, res, next) {
-    const { id } = req.body;
+    const {id} = req.body;
     const classId = classes.find((classId) => 
         classId.id === id
     );
@@ -117,7 +116,7 @@ function verifyLogin(req, res, next) {
 };
 
 function verifyCPF(req, res, next) {
-    const { cpf } = req.body;
+    const {cpf} = req.body;
     let add, rev;
     //cpf = cpf.replace(/[^\d]+/g,'');
 	if(cpf == '') {
@@ -125,7 +124,7 @@ function verifyCPF(req, res, next) {
             error: "Invalid CPF!"
         })
     }
-	// Elimina CPFs invalidos conhecidos	
+	// Elimina CPFs inválidos conhecidos	
 	if (cpf.length != 11 || 
 		cpf == "00000000000" || 
 		cpf == "11111111111" || 
@@ -151,7 +150,7 @@ function verifyCPF(req, res, next) {
         return res.json({
             error: "Invalid CPF!"
         })
-	// Valida 2o digito	
+	// Valida 2º digito	
 	add = 0;	
 	for (i = 0; i < 10; i ++)		
 		add += parseInt(cpf.charAt(i)) * (11 - i);	
@@ -186,14 +185,6 @@ function dateFormated(day, month, year) {
     return day+"/"+month+"/"+year;
 };
 
-// function secretPassword(password) {
-//     let secret = "";
-//     for(let i=0; i<password.length; i++) {
-//         secret += "*"
-//     };
-//     return secret;
-// };
-
 app.post("/register/employee", verifyIfEmployeeAlreadyExists, verifyCPF, (req, res) => {
     const {name, employeeRegistration, password, cpf, email, birthDate, cellPhone} = req.body;
     const newDate = new Date();
@@ -211,17 +202,6 @@ app.post("/register/employee", verifyIfEmployeeAlreadyExists, verifyCPF, (req, r
         createdAt: dateFormated(day, month, year),
         class: []
     });
-    // employeesSecret.push({
-    //     name: nameFormated(name),
-    //     employeeRegistration,
-    //     cpf: cpfFormated(cpf),
-    //     password: secretPassword(password),
-    //     email,
-    //     birthDate,
-    //     cellPhone: cellFormated(cellPhone),
-    //     createdAt: dateFormated(day, month, year),
-    //     class: []
-    // });
     return res.status(201).send();
 });
 
@@ -281,7 +261,7 @@ app.get("/search/name", (req, res) => {
         });
     };
     return res.status(201).send(searchByName);
-})
+});
 
 app.get("/classes", (req, res) => {
     return res.status(201).send(classes);
