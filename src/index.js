@@ -94,14 +94,14 @@ function nameFormated(name) {
 
 function verifyClassLinkedEmployee(req, res, next) {
     const {classId} = req;
-    for (const valueEmployee of employees) {
+    for(const valueEmployee of employees) {
         for(const valueClass of valueEmployee.class) {
             if(valueClass === classId.id) {
                 return res.status(400).json({
                     error: "Class linked at employee!"
                 });
             };
-        };   
+        };
     };
     return next();
 };
@@ -182,6 +182,14 @@ function cellFormated(number) {
     return number.substring(0, 3)+" ("+number.substring(3, 5)+") "+number.substring(5, 10)+"-"+number.substring(10, 14);
 };
 
+function dayFormated(value) {
+    if(value<10) {
+        return `0${value}`;
+    } else {
+        return value;
+    };
+};
+
 function monthFormated(value) {
     if(value<10) {
         return `0${value}`;
@@ -194,7 +202,7 @@ function dateFormated() {
     const newDate = new Date();
     const year = newDate.getFullYear();
     const month = monthFormated(newDate.getMonth()+1);
-    const day = newDate.getDate();
+    const day = dayFormated(newDate.getDate());
     return `${day}/${month}/${year}`;
 };
 
