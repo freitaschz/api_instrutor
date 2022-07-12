@@ -8,6 +8,7 @@
 - [X] Deve ser possível cadastrar um instrutor
 - [X] Deve ser possível cadastrar turmas
 - [X] Deve ser possível vincular turmas ao instrutor
+- [ ] Deve ser possível desvincular turmas ao instrutor
 - [X] Deve ser possível buscar todos os instrutores
 - [X] Deve ser possível buscar um instrutor pelo registro
 - [X] Deve ser possível buscar um instrutor pelo cpf
@@ -40,23 +41,6 @@ O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em
 - [x] Formatação de número de celular
 - [ ] Criptografia de senha de login usando bcrypt
 
-## 💻 Pré-requisitos
-
-Antes de começar para usar o projeto, verifique se você atendeu aos seguintes requisitos:
-* Você instalou a versão mais recente de `NodeJS / Express / Insomnia`.
-* Você atualizou o `npm` ou o `yarn`.
-* Você tem uma máquina `Windows / Linux`.
-* Você leu todo o `README.md`.
-
-Para usar a API Financeira, sem dar `clone` e `pull`, siga essas etapas para a inicialização manual do projeto e instalação dos pacote Express:
-
-```
-npm init -y || yarn init -y
-npm install express || yarn add express
-```
-
-Após tais comandos de execução, crie a pasta `src` e insira o código JavaScript `index.js`. Em seguida abra o Insomnia e crie as rotas respectivas presentes no código, para testar a API.
-
 ## 🤝 Colaboradores
 
 Agradeço às seguintes pessoas que contribuíram para este projeto:
@@ -72,7 +56,7 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Kaic-2004">
+      <a href="https://github.com/kaicgoncalves">
         <img src="https://avatars.githubusercontent.com/u/100730175?v=4" width="100px;" alt="Foto do Kaic Gonçalves no Github"/><br>
         <sub>
           <b>Kaic Gonçalves</b>
