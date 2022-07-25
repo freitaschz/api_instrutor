@@ -1,5 +1,12 @@
 # API Instrutor
- API desenvolvida como trabalho, no curso Técnico em Desenvolvimento de Sistemas, usando NodeJS e o Express, com as requisições e respostas feitas através do Insomnia.
+
+[![Status][status-shield]][status-url]
+[![Forks][forks-shield]][forks-url]
+[![Stars][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+API desenvolvida como trabalho, no curso Técnico em Desenvolvimento de Sistemas, usando NodeJS e o Express, com as requisições e respostas feitas através do Insomnia.
 
 > Uma API para cadastro de instrutores e classes, verificação e deleção dos mesmos, ambos com verificações, atribuições e formatações.
 
@@ -39,7 +46,12 @@ O projeto está concluído de acordo com os requisitos do trabalho, mas ainda em
 - [x] Validação de CPF
 - [x] Formatação de CPF 
 - [x] Formatação de número de celular
-- [ ] Criptografia de senha de login usando bcrypt
+
+## 🚀 Tecnologias Utilizadas
+
+- ``NodeJS``
+- ``Express``
+- ``Insomnia``
 
 ## 🤝 Colaboradores
 
@@ -92,3 +104,15 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
 
 [⬆ Voltar ao topo](#)<br>
+
+<!-- BADGE LINKS & IMAGES -->
+[status-shield]: https://img.shields.io/static/v1?label=STATUS&message=EM%20APRIMORAMENTO&color=yellow&style=for-the-badge
+[status-url]: https://github.com/thiagofqs
+[forks-shield]: https://img.shields.io/github/forks/thiagofqs/api_instrutor_sequelize.svg?style=for-the-badge
+[forks-url]: https://github.com/thiagofqs/api_instrutor_sequelize/network/members
+[stars-shield]: https://img.shields.io/github/stars/thiagofqs/api_instrutor_sequelize.svg?style=for-the-badge
+[stars-url]: https://github.com/thiagofqs/api_instrutor_sequelize/stargazers
+[issues-shield]: https://img.shields.io/github/issues/thiagofqs/api_instrutor_sequelize.svg?style=for-the-badge
+[issues-url]: https://github.com/thiagofqs/api_instrutor_sequelize/issues
+[license-shield]: https://img.shields.io/github/license/thiagofqs/api_instrutor_sequelize.svg?style=for-the-badge
+[license-url]: https://github.com/thiagofqs/api_instrutor_sequelize/blob/master/LICENSE
